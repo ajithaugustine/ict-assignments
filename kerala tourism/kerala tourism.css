@@ -1,0 +1,79 @@
+*{
+    padding: 0px;
+    margin: 0px;
+}
+body{
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+.navbar{
+    padding-left:10pc;
+    background-color: yellowgreen;
+}
+.headtag{
+    padding-left:20px;
+    margin-left: 40pc;
+}
+/* form */
+form{
+    
+    background-color: rgb(141, 156, 115);
+  margin-top: 10px;
+    padding: 30px;
+    border: 1px solid cyan;
+    border-width: 30%;
+   
+}
+#login{
+    text-align: center;
+    color: yellow;
+}
+.btn{
+    width: 100%;
+    
+}
+h6{
+    color:yellow;
+}
+#signup{
+   padding-left: 5pc;
+    text-decoration: none;
+    color:yellow;
+}
+#signup:hover{
+   
+    color:red;
+}
+.login{
+    margin-top: 5pc;
+    width: 30%;
+    margin-left: 30pc;}
+
+/*carousel  */
+.mymargin{
+    margin-top: 20px;
+    padding-left: 15pc;
+}
+   
+
+/* contents */
+h5{
+    margin-top: 20px;
+    margin-bottom: 20px;
+    text-align: center;
+    color: darkcyan;
+}
+img{
+    padding-top: 10px;
+}
+h6{
+    color:red;
+}
+.content{
+    background-color: wheat;
+    border: 1px solid white;
+    width: 45%;
+    float: left;
+    margin-left: 45px;
+    padding-left: 10px;
+}

@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    
+    <title>signup</title>
+    
+
+<link rel="stylesheet" href="signup.css">
+
+
+</head>
+<body background="images/shutterstock_1404270323_20191104175504.jpg">
+   
+    <!-- form -->
+    <form action="#" onsubmit="return validation() ">
+        <header><h2>LOGIN</h2></header>
+        <label for="user">User name</label><br>
+        <input type="text" id="user" placeholder="username"><span id="msg"></span><br>
+        <label for="password" >Password</label><br>
+        <input type="password" id="password" placeholder="min 8 char required">
+        <span id="passerror"></span> <span id="indicator"></span><br><br>
+        <button>LOGIN</button><BR></BR>
+        <a href="kerala tourism.html">HOME</a>
+    </form>  
+    
+    
+
+    <script >
+  var user=document.getElementById("user");
+  var password=document.getElementById("password");
+  var usererror=document.getElementById("msg");
+  var passerror=document.getElementById("passerror");
+  var indicator=document.getElementById("indicator");
+  
+  function validation(){
+      message();
+      uservalidation();
+      passwordvalidation();
+  
+      
+  }
+  
+  // alert
+  
+  
+  function message(){
+      if(user.value==""||password.value==""){
+  
+         alert("fields can't be left empty");
+          
+      }
+  }
+  
+  
+      // uservalidation
+      function uservalidation(){
+          if(user.value==""){
+              usererror.innerHTML="&#10062"
+              usererror.style.color="red";
+              user.style.border="2px solid red"
+          }
+          else{
+              usererror.innerHTML="&#10004"
+              usererror.style.color="green"
+              user.style.border="2px solid green"
+          }
+      }
+  
+  
+      // passwordvalidation
+      function passwordvalidation(){
+          var length=password.value.length;
+  
+          regexp=/^(?=.*\d)(?=.*[a-z])(?=.*[A-Z])(?=.*[^a-zA-Z0-9])(?!.*\s).{8,15}$/;
+  if(regexp.test(password.value)){
+  
+         if(length<=8) {
+             indicator.innerHTML="<h4>weak password</h4>"
+             indicator.style.color="red"
+  
+             
+             }
+          else if(length<=11) {
+             indicator.innerHTML="<h4>meadium password</h4>"
+             indicator.style.color="orange"
+             }
+          else if(length<=15) {
+             indicator.innerHTML="<h4>strong password</h4>"
+             indicator.style.color="green"
+             }
+             
+  
+  
+          passerror.innerHTML="&#10004"
+          passerror.style.color="green"
+          password.style.border="2px solid green"
+          return true;
+          
+              }
+  else{
+      passerror.innerHTML="&#10062 <h5>password must contain atleast one uppercase,<br>one lowecase,one number, and one special character<br>limit=15</h5>";
+      passerror.style.color="red";
+      password.style.border="2px solid red"
+  
+      return false;
+  }
+      }
+    </script>
+
+</body>
+</html>
