@@ -1,0 +1,32 @@
+*{
+    margin: 0;
+    padding: 0;
+}
+
+body{
+    background: url(images/wallpaper.jpg);
+    
+}
+
+.formdesign{
+
+    background: rgba(199, 223, 200, 0.6);
+    border-style:outset;
+    margin-top: 70px;
+    padding: 20px;
+   
+
+}
+/* todo list */
+.btnn{
+    padding:10px;
+}
+header{
+    text-align: center;
+    font-size: xx-large;
+    color:white;
+    font-family: cursive;
+  
+}
+
+
