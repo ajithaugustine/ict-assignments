@@ -1,0 +1,25 @@
+*{
+    margin: 0;
+    padding: 0;
+}
+
+body{
+    background: url(images/wallpaper.jpg);
+    
+}
+
+.formdesign{
+
+    background: rgba(199, 223, 200, 0.6);
+    border-style:outset;
+    width: 40%;
+    margin-top: 70px;
+    padding: 20px;
+   
+
+}
+/* todo list */
+.btnn1{
+    padding:10px;
+}
+

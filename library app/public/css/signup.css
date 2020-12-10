@@ -1,0 +1,39 @@
+*{
+    margin: 0;
+    padding: 0;
+}
+body{
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+form{
+    border: 2px solid black;
+    margin-top: 10pc;
+    margin-left: 30pc;
+    width: 25%;
+    padding: 20px;
+    padding-left:4pc ;
+    background-color: blanchedalmond;
+
+}
+header{
+    color: chocolate;
+    padding-left: 4PC;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+label{
+    color: darkmagenta;
+    font-family: cursive;
+    
+}
+input{
+    padding: 5px;
+    width: 70%;
+
+}
+button{
+    padding: 5px;
+    width: 74%;
+    background-color: darkslateblue;
+    color: cyan;
+}

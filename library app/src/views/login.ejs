@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta http-equiv="content-type" content="text/html; charset=UTF-8">
+		<meta charset="utf-8">
+		<title><%=title%></title>
+		<meta name="generator" content="Bootply" />
+		<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+		<link href="css/bootstrap.min.css" rel="stylesheet">
+		<link href="//netdna.bootstrapcdn.com/font-awesome/3.2.1/css/font-awesome.min.css" rel="stylesheet">
+		<!--[if lt IE 9]>
+			<script src="//html5shim.googlecode.com/svn/trunk/html5.js"></script>
+		<![endif]-->
+		<link href="css/login.css" rel="stylesheet">
+	</head>
+	<body>
+<header class="navbar  navbar-fixed-top" role="banner">
+  <div class="container">
+    <div class="navbar-header">
+      <button class="navbar-toggle" type="button" data-toggle="collapse" data-target=".navbar-collapse">
+        <span class="sr-only">Toggle navigation</span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+      <a href="/" class="navbar-brand">Home</a>
+    </div>
+    <nav class="collapse navbar-collapse" role="navigation">
+      <ul class="nav navbar-nav">
+        <%for(i=0;i<nav.length;i++){%>
+        <li>
+          <a href="<%=nav[i].link%>"><%=nav[i].name%></a>
+        </li>
+        <%}%>
+     
+      </ul>
+      <ul class="nav navbar-right navbar-nav">
+        <li class="dropdown">
+          <a href="#" class="dropdown-toggle" data-toggle="dropdown"><i class="glyphicon glyphicon-search"></i></a>
+          <ul class="dropdown-menu" style="padding:12px;">
+            <form class="form-inline">
+              <button type="submit" class="btn btn-default pull-right"><i class="glyphicon glyphicon-search"></i></button><input type="text" class="form-control pull-left" placeholder="Search">
+            </form>
+          </ul>
+        </li>
+      </ul>
+    </nav>
+  </div>
+</header>
+   
+    <!-- form -->
+    
+<body>
+  <div>
+      <form action="/" onsubmit="return meassage()" class="col-4 container   formdesign rounded "  >
+  
+          <div class="form-group">
+            <label for="exampleInputEmail1">User name</label>
+            <input type="text" class="form-control" id="user" placeholder="Username" >
+            <small id="userhelp" ></small><br>
+  
+            <label for="exampleInputPassword1">Password</label>
+            <input type="text" class="form-control" id="pass" placeholder="Password">
+            <small id="pwdhelp" ></small>
+          </div>
+          <button type="submit" class="btn btn-primary btnn1">Submit</button>
+        </form>
+       </div>
+  
+  
+  <script>
+    let user=document.getElementById("user");
+    let pass = document.getElementById("pass");
+
+
+   function meassage(){
+    if(user.value==""|| pass.value==""){
+      alert("invalid")
+       return false;
+    }
+   
+     else{
+       return true;
+
+     
+   }}
+
+  </script>
+
+  
+</body>
+</html>
+
+</body>
+</html>

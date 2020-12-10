@@ -1,0 +1,222 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta http-equiv="content-type" content="text/html; charset=UTF-8">
+		<meta charset="utf-8">
+		<title><%=title%></title>
+		<meta name="generator" content="Bootply" />
+		<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+		<link href="css/bootstrap.min.css" rel="stylesheet">
+		<link href="//netdna.bootstrapcdn.com/font-awesome/3.2.1/css/font-awesome.min.css" rel="stylesheet">
+		<!--[if lt IE 9]>
+			<script src="//html5shim.googlecode.com/svn/trunk/html5.js"></script>
+		<![endif]-->
+		<link href="css/signup.css" rel="stylesheet">
+	</head>
+	<body>
+<header class="navbar navbar-bright navbar-fixed-top" role="banner">
+  <div class="container">
+    <div class="navbar-header">
+      <button class="navbar-toggle" type="button" data-toggle="collapse" data-target=".navbar-collapse">
+        <span class="sr-only">Toggle navigation</span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+      <a href="/" class="navbar-brand">Home</a>
+    </div>
+    <nav class="collapse navbar-collapse" role="navigation">
+      <ul class="nav navbar-nav">
+        <%for(i=0;i<nav.length;i++){%>
+        <li>
+          <a href="<%=nav[i].link%>"><%=nav[i].name%></a>
+        </li>
+        <%}%>
+     
+      </ul>
+      <ul class="nav navbar-right navbar-nav">
+        <li class="dropdown">
+          <a href="#" class="dropdown-toggle" data-toggle="dropdown"><i class="glyphicon glyphicon-search"></i></a>
+          <ul class="dropdown-menu" style="padding:12px;">
+            <form class="form-inline">
+              <button type="submit" class="btn btn-default pull-right"><i class="glyphicon glyphicon-search"></i></button><input type="text" class="form-control pull-left" placeholder="Search">
+            </form>
+          </ul>
+        </li>
+      </ul>
+    </nav>
+  </div>
+</header>
+   
+    <!-- form -->
+    <form action="/"  onsubmit="return validation()">
+        <header><h2>Signup</h2></header>
+        <label for="user">User name</label><br>
+        <input type="text" id="user" placeholder="username" onkeyup="return uservalidation()"><span id="msg"></span><br>
+        <label for="email">email</label><br>
+        <input type="email" id="email" placeholder="email.id" onkeyup="return emailvalidation()"><span id="emailerror"></span><br>
+        
+        <label for="phone" >Phone number</label><br>
+        <input type="tel" id="phone" maxlength="12" onkeyup="return phonevalidation();" placeholder="format=xxx-xxx-xxxx"><span id="pherror"></span><br>
+        
+        <label for="password" >Password</label><br>
+        <input type="password" id="password" placeholder="min 8 char required" onkeyup="return passwordvalidation();">
+        <span id="passerror"></span> <span id="indicator"></span><br><br>
+        <button>signup</button><BR></BR>
+        <a href="/">HOME</a>
+    </form>  
+    <!-- ondblclick="  ;uservalidation();passwordvalidation();emailvalidation() -->
+    
+
+    <script >
+         var user=document.getElementById("user");
+  var email=document.getElementById("email");
+  var phone=document.getElementById("phone");
+  var password=document.getElementById("password");
+  var usererror=document.getElementById("msg");
+  var emailerror=document.getElementById("emailerror");
+  var pherror=document.getElementById("pherror");
+  var passerror=document.getElementById("passerror");
+  var indicator=document.getElementById("indicator");
+ 
+  
+  
+  // alert
+  function validation(){
+    phonevalidation();
+    uservalidation();passwordvalidation();emailvalidation();message();
+      
+  
+      
+  }
+  
+  
+  function message(){
+      if(email.value==""||user.value==""||password.value==""||phone.value==""){
+  
+         alert("fields can't be left empty");
+         return false;
+          
+      }
+      else{
+          
+          return true;
+      }
+  }
+  
+  
+      // uservalidation
+      function uservalidation(){
+          if(user.value==""){
+              usererror.innerHTML="&#10062"
+              usererror.style.color="red";
+              user.style.border="2px solid red"
+              return false;
+              
+          }
+          else{
+              usererror.innerHTML="&#10004"
+              usererror.style.color="green"
+              user.style.border="2px solid green"
+              return true;
+             
+          }
+      }
+   
+  
+  
+  
+  // emailvalidation
+  function emailvalidation(){
+      regexp=/^([A_Za-z0-9]+)@([A-Za-z0-9]+).([A-Za-z]{2,3})$/
+  if(regexp.test(email.value)){
+  
+      emailerror.innerHTML="&#10004"
+      emailerror.style.color="green"
+      email.style.border="2px solid green"
+  
+      return true;
+      
+              }
+  else{
+      emailerror.innerHTML="&#10062";
+      emailerror.style.color="red";
+      email.style.border="2px solid red"
+  
+      return false;
+  }
+  }
+  
+  
+      // phonevalidation
+  
+      function phonevalidation(){
+          regexp=/^([0-9]{3})?[ .-]([0-9]{3})?[ .-]([0-9]{4})$/
+          if(regexp.test(phone.value)){
+         pherror.innerHTML="&#10004"
+      pherror.style.color="green"
+     phone.style.border="2px solid green"
+  
+      return true;
+      
+              }
+  else{
+      pherror.innerHTML="&#10062";
+      pherror.style.color="red";
+      phone.style.border="2px solid red"
+  
+      return false;
+  }
+  
+      }
+  
+  
+      // passwordvalidation
+      function passwordvalidation(){
+          var length=password.value.length;
+  
+          regexp=/^(?=.*\d)(?=.*[a-z])(?=.*[A-Z])(?=.*[^a-zA-Z0-9])(?!.*\s).{8,15}$/;
+  if(regexp.test(password.value)){
+             
+    passerror.innerHTML="&#10004"
+          passerror.style.color="green"
+          password.style.border="2px solid green"
+          return true;
+          e=1
+  
+         if(length<=8) {
+             indicator.innerHTML="<h4>weak password</h4>"
+             indicator.style.color="red"
+             return false;
+  
+             
+             }
+          else if(length<=11) {
+             indicator.innerHTML="<h4>meadium password</h4>"
+             indicator.style.color="orange"
+             return false;
+             }
+          else if(length<=15) {
+             indicator.innerHTML="<h4>strong password</h4>"
+             indicator.style.color="green"
+             return true;
+             }
+             
+  
+  
+         
+          
+              }
+  else{
+      passerror.innerHTML="&#10062 <h5>password must contain atleast one uppercase,<br>one lowecase,one number, and one special character<br>limit=15</h5>";
+      passerror.style.color="red";
+      password.style.border="2px solid red"
+  
+      return false;
+  }
+      }
+     
+    </script>
+
+</body>
+</html>
